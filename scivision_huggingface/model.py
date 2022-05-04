@@ -9,7 +9,7 @@ def tidy_predict(self, image: np.ndarray) -> str: # but really it wants a jpeg
     logits = outputs.logits
     # model predicts one of the 1000 ImageNet classes
     predicted_class_idx = logits.argmax(-1).item()
-    return "Predicted class:", pretrained_model.config.id2label[predicted_class_idx]
+    return "Predicted class:", self.pretrained_model.config.id2label[predicted_class_idx]
 
 
 def model_build(model_name: str):
