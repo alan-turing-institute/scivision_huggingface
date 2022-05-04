@@ -1,8 +1,7 @@
 from transformers import AutoFeatureExtractor, SwinForImageClassification
-import PIL
 
 
-def tidy_predict(self, image: PIL.JpegImagePlugin.JpegImageFile) -> str:
+def tidy_predict(self, image: np.ndarray) -> str:
     """Gives the top prediction for the provided image"""
     inputs = self.feature_extractor(images=image, return_tensors="pt")
     outputs = self.pretrained_model(**inputs)
@@ -12,7 +11,7 @@ def tidy_predict(self, image: PIL.JpegImagePlugin.JpegImageFile) -> str:
     return "Predicted class:", pretrained_model.config.id2label[predicted_class_idx]
 
 
-def model_build(model_name):
+def model_build(model_name: str):
     """Builds a model from the Hugging Face transformers package"""
     model = SwinForImageClassification.from_pretrained(model_name)
     feature_extractor = AutoFeatureExtractor.from_pretrained(model_name)
