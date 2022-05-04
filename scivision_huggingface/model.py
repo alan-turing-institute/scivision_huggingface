@@ -12,18 +12,13 @@ def tidy_predict(self, image: np.ndarray) -> str:
     # model predicts one of the 1000 ImageNet classes
     predicted_class_idx = logits.argmax(-1).item()
     return "Predicted class: " + self.pretrained_model.config.id2label[predicted_class_idx]
-
-
-def model_build(model_name: str):
-    """Builds a model from the Hugging Face transformers package"""
-    model = SwinForImageClassification.from_pretrained(model_name)
-    feature_extractor = AutoFeatureExtractor.from_pretrained(model_name)
-    return model, feature_extractor
         
 
 class microsoft_swin_tiny_patch4_window7_224:
     def __init__(self):
-        self.pretrained_model, self.feature_extractor = model_build('microsoft/swin-tiny-patch4-window7-224')
+        self.model_name = 'microsoft/swin-tiny-patch4-window7-224'
+        self.pretrained_model = SwinForImageClassification.from_pretrained(self.model_name)
+        self.feature_extractor = AutoFeatureExtractor.from_pretrained(self.model_name)
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
