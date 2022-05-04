@@ -1,10 +1,12 @@
 import numpy as np
+from PIL import Image
 from transformers import AutoFeatureExtractor, SwinForImageClassification
 
 
-def tidy_predict(self, image: np.ndarray) -> str: # but really it wants a jpeg
+def tidy_predict(self, image: np.ndarray) -> str:
     """Gives the top prediction for the provided image"""
-    inputs = self.feature_extractor(images=image, return_tensors="pt")
+    pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
+    inputs = self.feature_extractor(images=pillow_image, return_tensors="pt")
     outputs = self.pretrained_model(**inputs)
     logits = outputs.logits
     # model predicts one of the 1000 ImageNet classes
