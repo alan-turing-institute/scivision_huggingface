@@ -1,6 +1,5 @@
 from transformers import AutoFeatureExtractor, SwinForImageClassification
 from PIL import Image
-import requests
 
 
 def tidy_predict(self, image: PIL.JpegImagePlugin.JpegImageFile) -> str:
