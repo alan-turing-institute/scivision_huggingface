@@ -14,9 +14,9 @@ models:
         call: predict
         args:
             X: image
-   - model: imjeffhi_pokemon_classifier
-     args: None
-     prediction_fn:
-         call: predict
-         args:
-             X: image
+  - model: imjeffhi_pokemon_classifier
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
