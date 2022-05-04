@@ -22,13 +22,18 @@ def build_vit_model(model_name: str):
     model = ViTForImageClassification.from_pretrained(model_name)
     features = ViTFeatureExtractor.from_pretrained(model_name)
     return model, features
+    
+    
+def build_swin_model(model_name: str):
+    model = SwinForImageClassification.from_pretrained(model_name)
+    features = AutoFeatureExtractor.from_pretrained(model_name)
+    return model, features
         
 
 class microsoft_swin_tiny_patch4_window7_224:
     def __init__(self):
         self.model_name = 'microsoft/swin-tiny-patch4-window7-224'
-        self.pretrained_model = SwinForImageClassification.from_pretrained(self.model_name)
-        self.feature_extractor = AutoFeatureExtractor.from_pretrained(self.model_name)
+        self.pretrained_model, self.feature_extractor = build_vit_model(self.model_name)
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
