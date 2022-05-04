@@ -1,0 +1,16 @@
+name: scivision_huggingface
+url: https://github.com/alan-turing-institute/scivision_huggingface
+import: scivision_huggingface
+models:
+  - model: microsoft_swin_tiny_patch4_window7_224
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
+  # - model: google_vit_base_patch16_224
+  #   args: None
+  #   prediction_fn:
+  #       call: predict
+  #       args:
+  #           X: image
