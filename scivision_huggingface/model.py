@@ -32,7 +32,7 @@ class google_vit_base_patch16_224:
     def __init__(self):
         self.model_name = 'google/vit-base-patch16-224'
         self.pretrained_model = ViTForImageClassification.from_pretrained(self.model_name)
-        self.feature_extractor = ViTFeatureExtractor.from_pretrained.(self.model_name)
+        self.feature_extractor = ViTFeatureExtractor.from_pretrained(self.model_name)
 
     def predict(self, image: np.ndarray) -> np.ndarray:
         return tidy_predict(self, image)
