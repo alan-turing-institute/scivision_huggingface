@@ -36,6 +36,17 @@ class google_vit_base_patch16_224:
 
     def predict(self, image: np.ndarray) -> np.ndarray:
         return tidy_predict(self, image)
+        
+        
+class imjeffhi_pokemon_classifier:
+    def __init__(self):
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.model_name = 'imjeffhi/pokemon_classifier'
+        self.pretrained_model = ViTForImageClassification.from_pretrained(self.model_name).to(device)
+        self.feature_extractor = ViTFeatureExtractor.from_pretrained(self.model_name)
+
+    def predict(self, image: np.ndarray) -> np.ndarray:
+        return tidy_predict(self, image)
 
 
 if __name__ == "__main__":
