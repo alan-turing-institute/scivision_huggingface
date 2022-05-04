@@ -8,9 +8,9 @@ models:
         call: predict
         args:
             X: image
-  # - model: google_vit_base_patch16_224
-  #   args: None
-  #   prediction_fn:
-  #       call: predict
-  #       args:
-  #           X: image
+  - model: google_vit_base_patch16_224
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
