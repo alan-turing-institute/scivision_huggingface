@@ -23,7 +23,7 @@ class microsoft_swin_tiny_patch4_window7_224:
     def __init__(self):
         self.pretrained_model, self.feature_extractor = model_build('microsoft/swin-tiny-patch4-window7-224')
 
-    def predict(self, image: PIL.JpegImagePlugin.JpegImageFile) -> str:
+    def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
         
         
