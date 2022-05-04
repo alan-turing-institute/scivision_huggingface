@@ -1,6 +1,10 @@
 import numpy as np
 from PIL import Image
-from transformers import AutoFeatureExtractor, SwinForImageClassification
+from transformers import (AutoFeatureExtractor,
+                          SwinForImageClassification,
+                          ViTFeatureExtractor,
+                          ViTForImageClassification
+                         )
 
 
 def tidy_predict(self, image: np.ndarray) -> str:
@@ -24,12 +28,14 @@ class microsoft_swin_tiny_patch4_window7_224:
         return tidy_predict(self, image)
         
         
-# class google_vit_base_patch16_224:
-#     def __init__(self):
-#         self.pretrained_model, self.preprocess_input = model_build('google/vit-base-patch16-224')
-# 
-#     def predict(self, image: np.ndarray) -> np.ndarray:
-#         return tidy_predict(self, image)
+class google_vit_base_patch16_224:
+    def __init__(self):
+        self.model_name = 'google/vit-base-patch16-224'
+        self.pretrained_model = ViTForImageClassification.from_pretrained(self.model_name)
+        self.feature_extractor = ViTFeatureExtractor.from_pretrained.(self.model_name)
+
+    def predict(self, image: np.ndarray) -> np.ndarray:
+        return tidy_predict(self, image)
 
 
 if __name__ == "__main__":
