@@ -8,3 +8,4 @@ from .model import microsoft_swin_large_patch4_window7_224
 from .model import google_vit_base_patch32_384
 from .model import nvidia_mit_b0
 from .model import microsoft_swin_base_patch4_window7_224
+from .model import microsoft_swin_small_patch4_window7_224

@@ -141,6 +141,15 @@ class nvidia_mit_b0:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class microsoft_swin_small_patch4_window7_224:
+    def __init__(self):
+        self.model_name = 'microsoft/swin-small-patch4-window7-224'
+        self.pretrained_model, self.feature_extractor = build_swin_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
 
 
 if __name__ == "__main__":
