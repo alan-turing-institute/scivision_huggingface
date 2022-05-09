@@ -75,14 +75,50 @@ class microsoft_beit_base_patch16_224:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class microsoft_beit_base_patch16_224_pt22k_ft22k:
+    def __init__(self):
+        self.model_name = 'microsoft/beit-base-patch16-224-pt22k-ft22k'
+        self.pretrained_model, self.feature_extractor = build_beit_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
+
+
+class microsoft_swin_large_patch4_window7_224:
+    def __init__(self):
+        self.model_name = 'microsoft/swin-large-patch4-window7-224'
+        self.pretrained_model, self.feature_extractor = build_swin_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
+        
+        
+class google_vit_base_patch32_384:
+    def __init__(self):
+        self.model_name = 'google/vit-base-patch32-384'
+        self.pretrained_model, self.feature_extractor = build_vit_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> np.ndarray:
+        return tidy_predict(self, image)
+        
+        
+class microsoft_swin_base_patch4_window7_224:
+    def __init__(self):
+        self.model_name = 'microsoft/swin-base-patch4-window7-224'
+        self.pretrained_model, self.feature_extractor = build_swin_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
 
 # 
-# microsoft_beit_base_patch16_224_pt22k_ft22k
+# 
 # hf_internal_testing_tiny_random_vit
 # facebook_deit_base_distilled_patch16_224
-# microsoft_swin_large_patch4_window7_224
-# google_vit_base_patch32_384
+# 
+# 
 # nvidia_mit_b0
-# microsoft_swin_base_patch4_window7_224
+# 
 if __name__ == "__main__":
     pass
