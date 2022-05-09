@@ -4,7 +4,9 @@ import torch
 from transformers import (AutoFeatureExtractor,
                           SwinForImageClassification,
                           ViTFeatureExtractor,
-                          ViTForImageClassification
+                          ViTForImageClassification,
+                          BeitFeatureExtractor,
+                          BeitForImageClassification
                          )
 
 
@@ -28,6 +30,12 @@ def build_vit_model(model_name: str):
 def build_swin_model(model_name: str):
     model = SwinForImageClassification.from_pretrained(model_name)
     features = AutoFeatureExtractor.from_pretrained(model_name)
+    return model, features
+    
+    
+def build_beit_model(model_name: str):
+    model = BeitForImageClassification.from_pretrained(model_name)
+    features = BeitFeatureExtractor.from_pretrained(model_name)
     return model, features
         
 
@@ -58,7 +66,23 @@ class imjeffhi_pokemon_classifier:
 
     def predict(self, image: np.ndarray) -> np.ndarray:
         return tidy_predict(self, image)
+        
+        
+class microsoft_beit_base_patch16_224:
+    def __init__(self):
+        self.model_name = 'microsoft/beit-base-patch16-224'
+        self.pretrained_model, self.feature_extractor = build_beit_model(self.model_name)
 
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
 
+# 
+# microsoft_beit_base_patch16_224_pt22k_ft22k
+# hf_internal_testing_tiny_random_vit
+# facebook_deit_base_distilled_patch16_224
+# microsoft_swin_large_patch4_window7_224
+# google_vit_base_patch32_384
+# nvidia_mit_b0
+# microsoft_swin_base_patch4_window7_224
 if __name__ == "__main__":
     pass
