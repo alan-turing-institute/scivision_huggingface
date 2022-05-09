@@ -15,6 +15,10 @@ Via the scivision API, the [top 10 downloaded Image Classification models from H
 9. [microsoft_swin_base_patch4_window7_224](https://huggingface.co/microsoft/swin-base-patch4-window7-224)
 10. [microsoft_swin_small_patch4_window7_224](https://huggingface.co/microsoft/swin-small-patch4-window7-224)
 
+and a bonus model I found just for fun...
+
+Bonus: [imjeffhi_pokemon_classifier](https://huggingface.co/imjeffhi/pokemon_classifier)
+
 Models in this list can be loaded and used on data with a few lines of code, e.g.
 
 ```python

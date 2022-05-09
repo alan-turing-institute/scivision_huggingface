@@ -69,17 +69,6 @@ class google_vit_base_patch16_224:
         return tidy_predict(self, image)
         
         
-class imjeffhi_pokemon_classifier:
-    def __init__(self):
-        self.model_name = 'imjeffhi/pokemon_classifier'
-        model, self.feature_extractor = build_vit_model(self.model_name)
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.pretrained_model = model.to(device)
-
-    def predict(self, image: np.ndarray) -> np.ndarray:
-        return tidy_predict(self, image)
-        
-        
 class microsoft_beit_base_patch16_224:
     def __init__(self):
         self.model_name = 'microsoft/beit-base-patch16-224'
@@ -149,6 +138,17 @@ class microsoft_swin_small_patch4_window7_224:
         self.pretrained_model, self.feature_extractor = build_swin_model(self.model_name)
 
     def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
+        
+        
+class imjeffhi_pokemon_classifier:
+    def __init__(self):
+        self.model_name = 'imjeffhi/pokemon_classifier'
+        model, self.feature_extractor = build_vit_model(self.model_name)
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.pretrained_model = model.to(device)
+
+    def predict(self, image: np.ndarray) -> np.ndarray:
         return tidy_predict(self, image)
 
 

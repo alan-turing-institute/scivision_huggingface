@@ -14,12 +14,6 @@ models:
         call: predict
         args:
             X: image
-  - model: imjeffhi_pokemon_classifier
-    args: None
-    prediction_fn:
-        call: predict
-        args:
-            X: image
   - model: microsoft_beit_base_patch16_224
     args: None
     prediction_fn:
@@ -57,6 +51,12 @@ models:
         args:
             X: image
   - model: microsoft_swin_base_patch4_window7_224
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
+  - model: imjeffhi_pokemon_classifier
     args: None
     prediction_fn:
         call: predict
