@@ -32,12 +32,6 @@ models:
         call: predict
         args:
             X: image
-  - model: hf_internal_testing_tiny_random_vit
-    args: None
-    prediction_fn:
-        call: predict
-        args:
-            X: image
   - model: facebook_deit_base_distilled_patch16_224
     args: None
     prediction_fn:

@@ -114,7 +114,7 @@ class microsoft_swin_base_patch4_window7_224:
 
 # 
 # 
-# hf_internal_testing_tiny_random_vit
+
 # facebook_deit_base_distilled_patch16_224
 # 
 # 

@@ -8,7 +8,6 @@ Via the scivision API, the [top 10 downloaded Image Classification models from H
 2. [microsoft_beit_base_patch16_224](https://huggingface.co/microsoft/beit-base-patch16-224)
 3. [google_vit_base_patch16_224](https://huggingface.co/google/vit-base-patch16-224)
 4. [microsoft_beit_base_patch16_224_pt22k_ft22k](https://huggingface.co/microsoft/beit-base-patch16-224-pt22k-ft22k)
-5. [hf_internal_testing_tiny_random_vit](https://huggingface.co/hf-internal-testing/tiny-random-vit)
 6. [facebook_deit_base_distilled_patch16_224](https://huggingface.co/facebook/deit-base-distilled-patch16-224)
 7. [microsoft_swin_large_patch4_window7_224](https://huggingface.co/microsoft/swin-large-patch4-window7-224)
 8. [google_vit_base_patch32_384](https://huggingface.co/google/vit-base-patch32-384)
