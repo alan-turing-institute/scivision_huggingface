@@ -37,6 +37,12 @@ def build_beit_model(model_name: str):
     model = BeitForImageClassification.from_pretrained(model_name)
     features = BeitFeatureExtractor.from_pretrained(model_name)
     return model, features
+    
+    
+def build_deit_model(model_name: str):
+    model = DeiTForImageClassificationWithTeacher.from_pretrained(model_name)
+    features = AutoFeatureExtractor.from_pretrained(model_name)
+    return model, features
         
 
 class microsoft_swin_tiny_patch4_window7_224:
@@ -111,11 +117,20 @@ class microsoft_swin_base_patch4_window7_224:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class facebook_deit_base_distilled_patch16_224:
+    def __init__(self):
+        self.model_name = 'facebook/deit-base-distilled-patch16-224'
+        self.pretrained_model, self.feature_extractor = build_deit_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
 
 # 
 # 
 
-# facebook_deit_base_distilled_patch16_224
+# 
 # 
 # 
 # nvidia_mit_b0
