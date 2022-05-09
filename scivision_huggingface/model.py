@@ -43,6 +43,12 @@ def build_deit_model(model_name: str):
     model = DeiTForImageClassificationWithTeacher.from_pretrained(model_name)
     features = AutoFeatureExtractor.from_pretrained(model_name)
     return model, features
+    
+    
+def build_segformer_model(model_name: str):
+    model = SegformerForImageClassification.from_pretrained(model_name)
+    features = SegformerFeatureExtractor.from_pretrained(model_name)
+    return model, features
         
 
 class microsoft_swin_tiny_patch4_window7_224:
@@ -126,14 +132,16 @@ class facebook_deit_base_distilled_patch16_224:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class nvidia_mit_b0:
+    def __init__(self):
+        self.model_name = 'nvidia/mit-b0'
+        self.pretrained_model, self.feature_extractor = build_segformer_model(self.model_name)
 
-# 
-# 
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
 
-# 
-# 
-# 
-# nvidia_mit_b0
-# 
+
 if __name__ == "__main__":
     pass
