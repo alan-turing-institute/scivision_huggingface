@@ -6,7 +6,10 @@ from transformers import (AutoFeatureExtractor,
                           ViTFeatureExtractor,
                           ViTForImageClassification,
                           BeitFeatureExtractor,
-                          BeitForImageClassification
+                          BeitForImageClassification,
+                          DeiTForImageClassificationWithTeacher,
+                          SegformerFeatureExtractor,
+                          SegformerForImageClassification
                          )
 
 
