@@ -2,6 +2,8 @@
 
 Model repository for the [scivision](https://scivision.readthedocs.io/) project that enables loading of image classification models from [Hugging Face](https://huggingface.co/models?pipeline_tag=image-classification&sort=downloads).
 
+Classifies images as one of the 1000 ImageNet classes.
+
 Via the scivision API, the [top 10 downloaded Image Classification models from Hugging Face](https://huggingface.co/models?pipeline_tag=image-classification&sort=downloads) (of models with a model card, last updated 9th May 2022) can be installed, loaded and run. The list of models is as follows:
 
 1. [microsoft_swin_tiny_patch4_window7_224](https://huggingface.co/microsoft/swin-tiny-patch4-window7-224)
