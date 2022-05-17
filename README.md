@@ -26,7 +26,7 @@ Models in this list can be loaded and used on data with a few lines of code, e.g
 ```python
 from scivision import load_pretrained_model
 this_repo = 'https://github.com/alan-turing-institute/scivision_huggingface'
-model = load_pretrained_model(this_repo, allow_install=True, model='microsoft_swin_tiny_patch4_window7_224')
+model = load_pretrained_model(this_repo, model='microsoft_swin_tiny_patch4_window7_224')
 ```
 
 You can then use the loaded model's predict function on image data loaded via *scivision* (see the [user guide](https://scivision.readthedocs.io/en/latest/user_guide.html) for details on how data is loaded via the scivision catalog):
