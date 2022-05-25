@@ -1,5 +1,5 @@
 pillow
-torch
+torchvision
 transformers
 transformers[torch]
 transformers[tf-cpu]
