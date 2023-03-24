@@ -14,7 +14,7 @@ setup(
     description="scivision plugin for Hugging Face image classifiers",
     author="Ed Chalstrey",
     author_email="echalstrey@turing.ac.uk",
-    url="https://github.com/alan-turing-institute/scivision_huggingface",
+    url="https://github.com/IFenton/scivision_huggingface",
     packages=find_packages(),
     install_requires=requirements,
     python_requires=">=3.7",
