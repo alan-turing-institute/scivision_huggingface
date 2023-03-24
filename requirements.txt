@@ -1,15 +1,12 @@
 pillow
 torchvision
 transformers
-# transformers[torch] # just the torch package
 torch
-# transformers[tf-cpu] # "tensorflow-cpu", "onnxconverter-common", "tf2onnx", "tensorflow-text", "keras-nlp"
 tensorflow-cpu
 onnxconverter-common
 tf2onnx
 tensorflow-text
 keras-nlp
-# transformers[flax] # "jax", "jaxlib", "flax", "optax"
 jax
 jaxlib
 flax
