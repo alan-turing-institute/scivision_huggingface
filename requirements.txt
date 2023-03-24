@@ -1,6 +1,13 @@
 pillow
 torchvision
 transformers
-transformers[torch]
-transformers[tf-cpu]
-transformers[flax]
+torch
+tensorflow-cpu
+onnxconverter-common
+tf2onnx
+tensorflow-text
+keras-nlp
+jax
+jaxlib
+flax
+optax
