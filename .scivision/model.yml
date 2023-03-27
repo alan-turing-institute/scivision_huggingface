@@ -1,5 +1,5 @@
 name: scivision_huggingface
-url: https://github.com/alan-turing-institute/scivision_huggingface
+url: https://github.com/IFenton/scivision_huggingface
 import: scivision_huggingface
 models:
   - model: microsoft_swin_tiny_patch4_window7_224
