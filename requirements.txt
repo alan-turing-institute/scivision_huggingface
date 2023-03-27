@@ -7,7 +7,7 @@ onnxconverter-common
 tf2onnx
 tensorflow-text
 keras-nlp
-jax
+jax==0.2.10
 jaxlib
 flax
 optax
