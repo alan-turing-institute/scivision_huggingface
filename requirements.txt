@@ -2,7 +2,7 @@ pillow
 torchvision
 transformers
 torch==1.13.1
-tensorflow-cpu
+# tensorflow-cpu
 onnxconverter-common
 tf2onnx
 tensorflow-text
