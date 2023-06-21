@@ -1,13 +1,13 @@
-pillow
-torchvision
-transformers
-torch==1.13.1
-# tensorflow-cpu
-onnxconverter-common
-tf2onnx
-tensorflow-text
-keras-nlp
+flax
 jax==0.2.10
 jaxlib
-flax
+keras-nlp
+onnxconverter-common
 optax
+pillow
+# tensorflow-cpu
+tensorflow-text
+tf2onnx
+torch==1.13.1
+torchvision
+transformers
