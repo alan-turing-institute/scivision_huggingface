@@ -1,5 +1,5 @@
 flax
-jax==0.2.10
+jax>=0.2.10
 jaxlib
 keras-nlp
 onnxconverter-common
@@ -8,6 +8,6 @@ pillow
 # tensorflow-cpu
 tensorflow-text
 tf2onnx
-torch==1.13.1
+torch>=1.13.1
 torchvision
 transformers
